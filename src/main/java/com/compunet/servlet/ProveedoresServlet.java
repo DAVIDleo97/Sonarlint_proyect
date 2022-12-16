@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 public class ProveedoresServlet extends HttpServlet {
     
      //Método GET
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String menu = request.getParameter("crud");
@@ -35,9 +36,9 @@ public class ProveedoresServlet extends HttpServlet {
     }
 
     //Método POST: lo oculta, lo cifra, es más pesado (diferencia con Metodo GET
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) {
-        //doGet(request, response);
-
+    	//doGet(request, response);
     }
 
     //CRUD
@@ -81,15 +82,15 @@ public class ProveedoresServlet extends HttpServlet {
             tabla += "<tbody>";
             while (r.next()) {
                 tabla += "<tr>";
-                tabla += "<td>" + r.getInt("id_prov");
+                tabla += "<td>" + r.getInt("idProv");
                 tabla += "</td>";
-                tabla += "<td>" + r.getString("ruc_prov");
+                tabla += "<td>" + r.getString("rucProv");
                 tabla += "</td>";
-                tabla += "<td>" + r.getString("nombre_prov");
+                tabla += "<td>" + r.getString("nombreProv");
                 tabla += "</td>";
-                tabla += "<td>" + r.getString("direccion_prov");
+                tabla += "<td>" + r.getString("direccionProv");
                 tabla += "</td>";
-                tabla += "<td>" + r.getString("telefono_prov");
+                tabla += "<td>" + r.getString("telefonoProv");
                 tabla += "</td>";
                 tabla += "<td>";
                 tabla += "<button type='button' class='btn btn-dark' data-toggle='modal' data-target='#actualizarProveedor' onclick=\"cargarDatosActualizar('" + r.getInt("id_prov") + "','" + r.getString("ruc_prov") + "','" + r.getString("nombre_prov") + "','" + r.getString("direccion_prov") + "','" + r.getString("telefono_prov") + "')\">Actualizar</button>";

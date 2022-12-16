@@ -5,11 +5,11 @@ import java.sql.ResultSet;
 
 public class Proveedores {
 
-    private int id_prov;
-    private String ruc_prov;
-    private String nombre_prov;
-    private String direccion_prov;
-    private String telefono_prov;
+    private int idProv;
+    private String rucProv;
+    private String nombreProv;
+    private String direccionProv;
+    private String telefonoProv;
     private String buscar;
     private CBDD c;
 
@@ -17,44 +17,44 @@ public class Proveedores {
         c = new CBDD();
     }
 
-    public int getId_prov() {
-        return id_prov;
+    public int getIdProv() {
+        return idProv;
     }
 
-    public void setId_prov(int id_prov) {
-        this.id_prov = id_prov;
+    public void setIdProv(int idProv) {
+        this.idProv = idProv;
     }
 
-    public String getRuc_prov() {
-        return ruc_prov;
+    public String getRucProv() {
+        return rucProv;
     }
 
-    public void setRuc_prov(String ruc_prov) {
-        this.ruc_prov = ruc_prov;
+    public void setRucProv(String rucProv) {
+        this.rucProv = rucProv;
     }
 
-    public String getNombre_prov() {
-        return nombre_prov;
+    public String getNombreProv() {
+        return nombreProv;
     }
 
-    public void setNombre_prov(String nombre_prov) {
-        this.nombre_prov = nombre_prov;
+    public void setNombreProv(String nombreProv) {
+        this.nombreProv = nombreProv;
     }
 
-    public String getDireccion_prov() {
-        return direccion_prov;
+    public String getDireccionProv() {
+        return direccionProv;
     }
 
-    public void setDireccion_prov(String direccion_prov) {
-        this.direccion_prov = direccion_prov;
+    public void setDireccionProv(String direccionProv) {
+        this.direccionProv = direccionProv;
     }
 
-    public String getTelefono_prov() {
-        return telefono_prov;
+    public String getTelefonoProv() {
+        return telefonoProv;
     }
 
-    public void setTelefono_prov(String telefono_prov) {
-        this.telefono_prov = telefono_prov;
+    public void setTelefonoProv(String telefonoProv) {
+        this.telefonoProv = telefonoProv;
     }
 
     public String getBuscar() {
@@ -67,40 +67,40 @@ public class Proveedores {
 
    
 
-    public boolean insertProveedores(String r, String n, String d, String t) { // nnombre, ruc, contacto, direccion       
-        setRuc_prov(r);
-        setNombre_prov(n);
-        setDireccion_prov(d);
-        setTelefono_prov(t);
+    public boolean insertProveedores(String r, String n, String d, String t) {      
+        setRucProv(r);
+        setNombreProv(n);
+        setDireccionProv(d);
+        setTelefonoProv(t);
         String sql = "INSERT INTO `proveedores`"
                 + "(`ruc_prov`, `nombre_prov`, `direccion_prov`, "
                 + "`telefono_prov`) "
                 + "VALUES "
-                + "('" + getRuc_prov() + "',"
-                + "'" + getNombre_prov() + "',"
-                + "'" + getDireccion_prov() + "',"
-                + "'" + getTelefono_prov() + "')";
+                + "('" + getRucProv() + "',"
+                + "'" + getNombreProv() + "',"
+                + "'" + getDireccionProv() + "',"
+                + "'" + getTelefonoProv() + "')";
         return this.c.ejecutar(sql);
     }
 
     public boolean deleteProveedores(int id) {
-        setId_prov(id);
+        setIdProv(id);
         String sql = "DELETE FROM `proveedores`\n"
-                + "WHERE `id_prov` =" + getId_prov();
+                + "WHERE `id_prov` =" + getIdProv();
         return c.ejecutar(sql);
     }
 
     public boolean updateProveedores(int id, String r, String n, String d, String t) {
-        setId_prov(id);
-        setRuc_prov(r);
-        setNombre_prov(n);
-        setDireccion_prov(d);
-        setTelefono_prov(t);
-        String sql = "UPDATE `proveedores` SET `ruc_prov`='" + getRuc_prov() + "',\n"
-                + "`nombre_prov`='" + getNombre_prov() + "',\n"
-                + "`direccion_prov`='" + getDireccion_prov() + "',\n"
-                + "`telefono_prov`='" + getTelefono_prov() + "'\n"
-                + "WHERE `id_prov`=" + getId_prov();
+        setIdProv(id);
+        setRucProv(r);
+        setNombreProv(n);
+        setDireccionProv(d);
+        setTelefonoProv(t);
+        String sql = "UPDATE `proveedores` SET `ruc_prov`='" + getRucProv() + "',\n"
+                + "`nombre_prov`='" + getNombreProv() + "',\n"
+                + "`direccion_prov`='" + getDireccionProv() + "',\n"
+                + "`telefono_prov`='" + getTelefonoProv() + "'\n"
+                + "WHERE `id_prov`=" + getIdProv();
         return this.c.ejecutar(sql);
     }
 

@@ -5,63 +5,63 @@ import java.sql.ResultSet;
 
 public class Usuarios {
 
-    private int id_u;
-    private String usuario_u;
-    private String clave_u;
-    private String rol_u;
-    private String buscar_u;
+    private int idU;
+    private String usuarioU;
+    private String claveU;
+    private String rolU;
+    private String buscarU;
     private CBDD c;
 
     public Usuarios() {
         c = new CBDD();
     }
 
-    public int getId_u() {
-        return id_u;
+    public int getIdU() {
+        return idU;
     }
 
-    public void setId_u(int id_u) {
-        this.id_u = id_u;
+    public void setIdU(int idU) {
+        this.idU = idU;
     }
 
-    public String getUsuario_u() {
-        return usuario_u;
+    public String getUsuarioU() {
+        return usuarioU;
     }
 
-    public void setUsuario_u(String usuario_u) {
-        this.usuario_u = usuario_u;
+    public void setUsuarioU(String usuarioU) {
+        this.usuarioU = usuarioU;
     }
 
-    public String getClave_u() {
-        return clave_u;
+    public String getClaveU() {
+        return claveU;
     }
 
-    public void setClave_u(String clave_u) {
-        this.clave_u = clave_u;
+    public void setClaveU(String claveU) {
+        this.claveU = claveU;
     }
 
-    public String getRol_u() {
-        return rol_u;
+    public String getRolU() {
+        return rolU;
     }
 
-    public void setRol_u(String rol_u) {
-        this.rol_u = rol_u;
+    public void setRolU(String rolU) {
+        this.rolU = rolU;
     }
 
-    public String getBuscar_u() {
-        return buscar_u;
+    public String getBuscarU() {
+        return buscarU;
     }
 
-    public void setBuscar_u(String buscar_u) {
-        this.buscar_u = buscar_u;
+    public void setBuscarU(String buscarU) {
+        this.buscarU = buscarU;
     }
 
     public ResultSet verificarUsuario(String usuario, String clave) {
-        setUsuario_u(usuario);
-        setClave_u(clave);
+        setUsuarioU(usuario);
+        setClaveU(clave);
         String sql = "SELECT * FROM `usuario`\n"
-                + "WHERE `usuario_u` = '" + getUsuario_u() + "'\n"
-                + "and `clave_u` = SHA1('" + getClave_u() + "')";
+                + "WHERE `usuario_u` = '" + getUsuarioU() + "'\n"
+                + "and `clave_u` = SHA1('" + getClaveU() + "')";
         return c.consulta(sql);
     }
 }

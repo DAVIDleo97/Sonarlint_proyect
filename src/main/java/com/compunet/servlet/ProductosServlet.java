@@ -39,7 +39,7 @@ public class ProductosServlet extends HttpServlet {
 
     //POST
     protected void doPost(HttpServletRequest request, HttpServletResponse response) {
-        //doGet (request, response);
+    	//doGet(request, response);
     }
 
     //CRUD
@@ -92,23 +92,23 @@ public class ProductosServlet extends HttpServlet {
 
             while (r.next()) {
                 tabla += "<tr>";
-                tabla += "<td>" + r.getInt("id_prod");
+                tabla += "<td>" + r.getInt("idProd");
                 tabla += "</td>";
-                tabla += "<td>" + r.getString("idProveedores_prod");
+                tabla += "<td>" + r.getString("idProveedoresProd");
                 tabla += "</td>";
-                tabla += "<td>" + r.getString("nombre_prod");
+                tabla += "<td>" + r.getString("nombreProd");
                 tabla += "</td>";
-                tabla += "<td>" + r.getString("descripcion_prod");
+                tabla += "<td>" + r.getString("descripcionPProd");
                 tabla += "</td>";
-                tabla += "<td>" + r.getDouble("valorRefComp_prod");
+                tabla += "<td>" + r.getDouble("valorRefCompProd");
                 tabla += "</td>";
-                tabla += "<td>" + r.getDouble("valorRefVenta_prod");
+                tabla += "<td>" + r.getDouble("valorRefVentaProd");
                 tabla += "</td>";
-                tabla += "<td>" + r.getInt("stock_prod");
+                tabla += "<td>" + r.getInt("stockProd");
                 tabla += "</td>";
-                tabla += "<td>" + r.getString("tieneIva_prod");
+                tabla += "<td>" + r.getString("tieneIvaProd");
                 tabla += "</td>";
-                tabla += "<td>" + r.getString("tipo_prod");
+                tabla += "<td>" + r.getString("tipoProd");
                 tabla += "</td>";
                 tabla += "<td>";
                 tabla += "<button type='button' class='btn btn-dark' data-toggle='modal' data-target='#actualizarProducto' onclick=\"cargarDatosActualizar('" + r.getInt("id_prod") + "','" + r.getInt("idProveedores_prod") + "','" + r.getString("nombre_prod") + "','" + r.getString("descripcion_prod") + "','" + r.getDouble("valorRefComp_prod") + "','" + r.getDouble("valorRefVenta_prod") + "','" + r.getInt("stock_prod") + "','" + r.getString("tieneIva_prod") + "','" + r.getString("tipo_prod") + "')\">Actualizar</button>";

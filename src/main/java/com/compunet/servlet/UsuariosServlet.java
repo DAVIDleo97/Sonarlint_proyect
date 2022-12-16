@@ -28,11 +28,10 @@ public class UsuariosServlet extends HttpServlet{
             ResultSet r = u.verificarUsuario(usuario, clave);
             int cont = 0;
             
-             /*La siguiente línea está almacenando la sesión del proyecto*/
             HttpSession sesion = request.getSession();
             while (r.next()) {
-                sesion.setAttribute("usuario", r.getString("usuario_u"));
-                sesion.setAttribute("perfil", r.getString("rol_u"));
+                sesion.setAttribute("usuario", r.getString("usuarioU"));
+                sesion.setAttribute("perfil", r.getString("rolU"));
                 cont++;
             }
            
