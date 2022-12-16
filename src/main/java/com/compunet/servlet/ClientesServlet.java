@@ -13,6 +13,9 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name = "ClientesS", urlPatterns = "/ClientesS")
 public class ClientesServlet extends HttpServlet {
 
+	private static final long serialVersionUID = 1L;
+
+	@Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String menu = request.getParameter("crud");
@@ -29,12 +32,6 @@ public class ClientesServlet extends HttpServlet {
             //Delete
             deleteClientes(request, response);
         }
-
-    }
-
-    //Método POST: lo oculta, lo cifra, es más pesado (diferencia con Metodo GET
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) {
-        //doGet(request, response);
 
     }
 

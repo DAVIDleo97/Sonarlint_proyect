@@ -14,7 +14,8 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name = "Proveedores", urlPatterns = "/ProveedoresS")
 public class ProveedoresServlet extends HttpServlet {
     
-     //Método GET
+	private static final long serialVersionUID = 1L;
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -35,10 +36,9 @@ public class ProveedoresServlet extends HttpServlet {
 
     }
 
-    //Método POST: lo oculta, lo cifra, es más pesado (diferencia con Metodo GET
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) {
-    	//doGet(request, response);
+      //document why this method is empty
     }
 
     //CRUD

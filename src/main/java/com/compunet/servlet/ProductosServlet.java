@@ -13,12 +13,9 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name = "ProductosS", urlPatterns = "/ProductosS")
 public class ProductosServlet extends HttpServlet {
 
-    //GET = http://localhost:8080/POOII_JSF/ProductosS?crud=sel&txtBuscar=
-    //http://localhost:8080/POOII_JSF/ProductosS?crud=in&txtN=Cuaderno&txtD=Azul&decVc=18.0&decVv=22.0&numS=5&txtTi=SI&txtTp=CONSUMO
-    //http://localhost:8080/POOII_JSF/ProductosS?crud=up&numId=31&txtN=Lámpara&txtD=Negra&decVc=18.0&decVv=22.0&numS=5&txtTi=SI&txtTp=CONSUMO
-    //http://localhost:8080/POOII_JSF/ProductosS?crud=del&numId=31
-    //POST = dominio.com/carpeta/index01.jsp?AB1234F09977D345678
-    //Método GET
+	private static final long serialVersionUID = 1L;
+
+	@Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String menu = request.getParameter("crud");
@@ -38,8 +35,9 @@ public class ProductosServlet extends HttpServlet {
     }
 
     //POST
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) {
-    	//doGet(request, response);
+    	//document why this method is empty
     }
 
     //CRUD
